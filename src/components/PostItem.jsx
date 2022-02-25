@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 
-export default class PostItem extends React.Component {
+class PostItem extends React.Component {
     render() {
         return (
             <li>
@@ -13,7 +13,9 @@ export default class PostItem extends React.Component {
     }
 }
 
-
 PostItem.propTypes = {
-    post: PropTypes.object
+    post: PropTypes.object.isRequired
 }
+
+
+export default PostItem
