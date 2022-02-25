@@ -6,4 +6,4 @@ Learn Redux, React-Redux, Redux-Thunk with building React app.
 Building simple blog with JSON Placeholder API(https://jsonplaceholder.typicode.com)
 
 - Fetch Posts
-- Add Post
+- Create Post
