@@ -60,7 +60,7 @@ class Posts extends React.Component {
     //         this.props.posts.unshift(nextProps.newPost)
     //     }
     // }
-    /***** Replace componentWillReceiveProps(), but NOT EXECUTABLE *****/
+    /***** Replace componentWillReceiveProps(), but NOT SUFFICIENT *****/
     // componentDidUpdate(prevProps) {
     //     if (prevProps.newPost.id !== this.props.newPost.id) {
     //         this.props.posts.unshift(this.state.newPost)
