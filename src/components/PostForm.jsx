@@ -26,7 +26,7 @@ class PostForm extends React.Component {
     // handleSubmit(e) {
     //     e.preventDefault()
     //     if (!this.state.title || !this.state.body) {
-    //         return alert('Please Endter Title and Body')
+    //         return alert('Please Enter Title and Body')
     //     }
     //     const newPost = {
     //         title: this.state.title,
