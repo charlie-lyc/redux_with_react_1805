@@ -53,14 +53,14 @@ class Posts extends React.Component {
     componentDidMount() {
         this.props.fetchPosts()
     }
-    /*************** Legacy Code : Without constructor() ***************/
+    /**************** Legacy Code : No Need 'constructor()' ****************/
     // componentWillReceiveProps(nextProps) {
-    //     if (nextProps.newPost.id !== this.props.newPost.id) {
-    //     // if (this.props.newPost.title !== nextProps.newPost.title) {
+    //     // WARNING : JSON Placeholder API always return new post's id 101
+    //     if (nextProps.newPost.id !== this.props.newPost.id) { 
     //         this.props.posts.unshift(nextProps.newPost)
     //     }
     // }
-    /***** Replace componentWillReceiveProps(), but NOT SUFFICIENT *****/
+    /** Try to Replace 'componentWillReceiveProps()', but NOT SUFFICIENT! **/
     // componentDidUpdate(prevProps) {
     //     if (prevProps.newPost.id !== this.props.newPost.id) {
     //         this.props.posts.unshift(this.state.newPost)
