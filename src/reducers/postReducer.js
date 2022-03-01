@@ -1,4 +1,4 @@
-import { FETCH_POSTS, CREATE_POST } from "../actions/actionsTypes"
+import { FETCH_POSTS, CREATE_POST, ADD_POST } from "../actions/actionsTypes"
 
 
 const initialState = {
@@ -16,8 +16,13 @@ const postReducer = (state=initialState, action) => {
             }
         case CREATE_POST:
             return {
-                items: [ action.payload, ...state.items ],
+                ...state,
                 item: action.payload
+            }
+        case ADD_POST:
+            return {
+                ...state,
+                items: [ action.payload, ...state.items ]
             }
         default:
             return state

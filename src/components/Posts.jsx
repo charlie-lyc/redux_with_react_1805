@@ -1,6 +1,6 @@
 import React from 'react'
 import PostItem from './PostItem'
-import { fetchPosts } from '../actions/postActions'
+import { fetchPosts, addPost } from '../actions/postActions'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -56,16 +56,19 @@ class Posts extends React.Component {
     /**************** Legacy Code : No Need 'constructor()' ****************/
     // componentWillReceiveProps(nextProps) {
     //     // WARNING : JSON Placeholder API always return new post's id 101
-    //     if (nextProps.newPost.id !== this.props.newPost.id) { 
-    //         this.props.posts.unshift(nextProps.newPost)
+    //     // if (nextProps.newPost.id !== this.props.newPost.id) {
+    //     if (nextProps.newPost.title !== this.props.newPost.title) {
+    //         this.props.addPost(nextProps.newPost)
     //     }
     // }
-    /** Try to Replace 'componentWillReceiveProps()', but NOT SUFFICIENT! **/
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.newPost.id !== this.props.newPost.id) {
-    //         this.props.posts.unshift(this.state.newPost)
-    //     }
-    // }
+    /*************** Replace 'componentWillReceiveProps()' ***************/
+    componentDidUpdate(prevProps) {
+        // WARNING : JSON Placeholder API always return new post's id 101
+        // if (prevProps.newPost.id !== this.props.newPost.id) { 
+        if (prevProps.newPost.title !== this.props.newPost.title) {
+            this.props.addPost(this.props.newPost)
+        }
+    }
 
     render() {
         let postItems
@@ -99,13 +102,15 @@ const mapStateToProps = state => (
     } 
 )
 const mapDispatchToProps = {
-    fetchPosts
+    fetchPosts,
+    addPost
 }
 
 Posts.propTypes = {
     posts: PropTypes.array.isRequired,
     newPost: PropTypes.object.isRequired,
-    fetchPosts: PropTypes.func.isRequired
+    fetchPosts: PropTypes.func.isRequired,
+    addPost: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Posts)
