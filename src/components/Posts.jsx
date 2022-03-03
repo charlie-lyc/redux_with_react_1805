@@ -93,14 +93,12 @@ class Posts extends React.Component {
 /**
  * connect(mapStateToProps, mapDispatchToProps)(Component)
  */
-const mapStateToProps = state => (
-    {   
-        // < state.posts > from '../reducers/index.js'
-        // < state.posts.items > and < state.posts.item > from '../reducers/postReducer.js'
-        posts: state.posts.items, 
-        newPost: state.posts.item 
-    } 
-)
+const mapStateToProps = state => ({   
+    // < state.posts > from '../reducers/index.js'
+    // < state.posts.items > and < state.posts.item > from '../reducers/postReducer.js'
+    posts: state.posts.items, 
+    newPost: state.posts.item 
+})
 const mapDispatchToProps = {
     fetchPosts,
     addPost
